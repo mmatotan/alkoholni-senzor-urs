@@ -44,7 +44,7 @@ void init_usart(uint8_t ubrr)
 	UBRRH = 0;
 	UBRRL = (uint8_t) ubrr;
 	
-	UCSRB = _BV(RXEN) | _BV(TXEN) | _BV(RXCIE);
+	UCSRB = _BV(TXEN);
 	UCSRC = _BV(URSEL) | _BV(UCSZ0) | _BV(UCSZ1) | _BV(UPM1) |_BV(USBS);
 	
 	return;
