@@ -1,9 +1,6 @@
 import serial
 import datetime
 import csv
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
-import dateutil
 
 # Specifikacija USARTa
 ser = serial.Serial('/dev/ttyUSB0')
@@ -23,7 +20,6 @@ last_measure = -1
 while 1:
     rec = ser.readline()
     rec = int(rec.decode("ascii"))
-    rec = rec
     if(rec == last_measure):
         continue
     output_time = f'{datetime.datetime.now().strftime("%H:%M:%S:%f")[:-4]}'
